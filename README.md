@@ -20,4 +20,4 @@
       2. bookmark/models Bookmark \_\_str\_\_()
    4. bookmark/views BookmarkListView
    5. bookmark/urls bookmark:list
-      1. 
+   6. templates bookmark_list.html

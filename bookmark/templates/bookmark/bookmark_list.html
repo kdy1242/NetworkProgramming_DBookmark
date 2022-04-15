@@ -5,27 +5,28 @@
     <title>Bookmark List</title>
 </head>
 <body>
-    <table>
-        <thead>
+<a href="{% url 'bookmark:add' %}">Add Bookmark</a>
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>name</th>
+        <th>URL</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for bookmark in bookmark_list %}
         <tr>
-            <th>#</th>
-            <th>name</th>
-            <th>URL</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ bookmark.name }}</td>
+            <td>{{ bookmark.url }}</td>
+            <td>Edit</td>
+            <td>Delete</td>
         </tr>
-        </thead>
-        <tbody>
-        {% for bookmark in bookmark_list %}
-            <tr>
-                <td>{{ forloop.counter }}</td>
-                <td>{{ bookmark.name }}</td>
-                <td>{{ bookmark.url }}</td>
-                <td>Edit</td>
-                <td>Delete</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    {% endfor %}
+    </tbody>
+</table>
 </body>
 </html>

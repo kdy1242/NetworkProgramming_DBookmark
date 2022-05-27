@@ -34,5 +34,5 @@
    17. bookmark/views BookmarkDeleteView
    18. bookmark/urls bookmark:delete
    19. templates bookmark_delete.html
-4. @@@기능완성@@@
+4. @@@기능 완성@@@
    1. templates/base.html, extends 'base.html', block title, content

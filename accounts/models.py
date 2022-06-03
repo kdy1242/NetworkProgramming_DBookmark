@@ -6,4 +6,4 @@ class Profile(models.Model):
     nickname = models.CharField('별명', max_length=20)
 
     def __str__(self):
-        return f'{self.nicknmae}({self.user.username})'
+        return f'{self.nickname}({self.user.username})'

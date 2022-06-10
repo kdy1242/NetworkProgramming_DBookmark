@@ -5,11 +5,11 @@ from accounts.models import Profile
 
 
 class RegisterForm(UserCreationForm):
-    username = forms.CharField(lable='사용자명', widget=forms.TextInput(attrs={
-        'pattern': '[a-zA-Z0-9]',
-        'title': '영어 소문자 대문자, 숫자만 가능. 특수문자, 공백, 입력 안됨',
+    username = forms.CharField(label='사용자명', widget=forms.TextInput(attrs={
+        'pattern': '[a-zA-Z0-9]+',
+        'title': '영어 소문자 대문자, 숫자만 가능. 특수문자, 공백 입력 안됨',
     }))
-    nickname = forms.CharField(lable='별명')
+    nickname = forms.CharField(label='별명')
 
     class Meta(UserCreationForm.Meta):
         fields = UserCreationForm.Meta.fields + ('email',)  # ('username', 'email',)

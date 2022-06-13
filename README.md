@@ -60,3 +60,4 @@
     - accounts/templates/accounts register, bookmark/templates/bookmark bookmark_list
 - Login, logout
   - accounts/forms LoginForm
+  - accounts/views my_login, my_logout

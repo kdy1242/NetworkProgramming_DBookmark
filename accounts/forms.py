@@ -25,7 +25,7 @@ class RegisterForm(UserCreationForm):
         return new_profile
 
 
-class LoginFrom(models.ModelForm):
+class LoginForm(models.ModelForm):
     password = forms.CharField(label='패스워드', widget=forms.PasswordInput)
 
     class Meta:

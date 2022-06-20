@@ -58,20 +58,24 @@
     - accounts/views register
     - DBookmark/urls, accounts/urls accounts:register
     - accounts/templates/accounts register, bookmark/templates/bookmark bookmark_list
-- Login, logout
-  - accounts/forms LoginForm
-  - accounts/views my_login, my_logout
-  - accounts/urls accounts:login, logout
-  - accounts/templates/accounts login, login_fail
-    - bookmark/templates/bookmark login, logout
-  - bookmark/views BookmarkListView get_queryset(), BookmarkCreateView get_initial()
-  - bookmark/templates/bookmark bookmark_create profile 숨기자
-  - accounts/templates/accounts add login link in register_done
-  - 로그인 요구하기
-    - FBV: @login_required
-      - accounts/views my_logout
-    - CBV: (loginRequiredMixin, )
-      - bookmark/views BookmarkCreateView, BookmarkDetailView, BookmarkUpdateView, BookmarkDeleteView
-  - 로그인 요구할 때, 이동할 URL setting
-    - settings LOGIN_URL
-  - 로그인 후 REDIRECT_FIELD_NAME으로 이동하자
+  - Login, logout
+    - accounts/forms LoginForm
+    - accounts/views my_login, my_logout
+    - accounts/urls accounts:login, logout
+    - accounts/templates/accounts login, login_fail
+      - bookmark/templates/bookmark login, logout
+    - bookmark/views BookmarkListView get_queryset(), BookmarkCreateView get_initial()
+    - bookmark/templates/bookmark bookmark_create profile 숨기자
+    - accounts/templates/accounts add login link in register_done
+    - 로그인 요구하기
+      - FBV: @login_required
+        - accounts/views my_logout
+      - CBV: (loginRequiredMixin, )
+        - bookmark/views BookmarkCreateView, BookmarkDetailView, BookmarkUpdateView, BookmarkDeleteView
+    - 로그인 요구할 때, 이동할 URL setting
+      - settings LOGIN_URL
+    - 로그인 후 REDIRECT_FIELD_NAME으로 이동하자
+  - FBV list_bookmark
+    - bookmark/views
+    - bookmark/urls
+    - DBookmark/urls

@@ -12,7 +12,7 @@ class BookmarkCreationForm(forms.ModelForm):
 
     def clean_url(self):
         url = self.cleaned_data.get('url')    # url 가져오자
-        if not url.startwith('http://') or url.startwith('https://'):    # 만약 http:// 나 https:// 가 없으면,
+        if not url.startswith('http://') or url.startswith('https://'):    # 만약 http:// 나 https:// 가 없으면,
             url = 'https://' + url    # https:// 추가하자
         return url
 

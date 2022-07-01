@@ -10,6 +10,12 @@ class BookmarkCreationForm(forms.ModelForm):
         model = Bookmark
         fields = ['name', 'url']
 
+    def clean_url(self):
+        url = self.cleaned_data.get('url')    # url 가져오자
+        if not url.startwith('http://') or url.startwith('https://'):    # 만약 http:// 나 https:// 가 없으면,
+            url = 'https://' + url    # https:// 추가하자
+        return url
+
     def save(self, commit=True):
         new_bookmark = Bookmark.objects.create(
             name=self.cleaned_data.get('name'),     # 사용자가 입력한 내용을 clean_name()하고 깨끗해진것 가져오자
